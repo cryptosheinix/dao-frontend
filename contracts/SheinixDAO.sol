@@ -35,6 +35,7 @@ contract SheinixDAO is ERC1155, Ownable, Pausable {
     require(pricePerToken <= msg.value, "Ether value sent is not correct");
 
     allowList[msg.sender] = false;
+    // (address to receive the nft, token_id, token_qty, data)
     _mint(msg.sender, 0, 1, abi.encodePacked(uint16(0x12)));
   }
 
